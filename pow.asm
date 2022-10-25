@@ -1,5 +1,5 @@
 .data
-	prompt1: .asciiz "Enter a number:\n"
+	prompt1: .asciiz "Enter a number x:\n"
 	prompt2: .asciiz "Enter the exponent n:\n"
 	response: .asciiz "Power(x,n) is:\n"
 
