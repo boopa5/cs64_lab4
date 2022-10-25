@@ -1,6 +1,6 @@
 .data
 	prompt: .asciiz "Enter the next number:\n"
-
+	response: .asciiz "Minimum: "
 .text
 main:
 	la $a0 prompt
@@ -26,6 +26,10 @@ main:
 	li $v0 5
 	syscall
 	move $t2 $v0
+
+	la $a0 response
+	li $v0 4
+	syscall
 
 	slt $t3 $t0 $t1
 	beq $t3 1 smallr
