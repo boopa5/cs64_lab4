@@ -42,6 +42,7 @@ main:
 	smallr:
 		slt $t3 $t0 $t2
 		beq $t3 1 printz
+		j printt
 
 	printz:
 		move $a0 $t0
