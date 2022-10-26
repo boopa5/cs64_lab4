@@ -224,7 +224,7 @@ doSwap:
 			lw $t1 0($t6)	#[y]
 			sw $t1 0($t4)	#[x]=y
 			sw $t5 0($t6)	#[y]=x
-			addiu $t0 $t0 1	#x++
+			addiu $t0 $t0 2	#x+=2
 			addiu $t4 $t4 8	#left pointer -= 8
 			li $t7 8
 			subu $t6 $t6 $t7 #right pointer -= 8
