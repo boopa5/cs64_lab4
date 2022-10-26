@@ -1,49 +1,33 @@
-.data
-	prompt1: .asciiz "Enter a number x:\n"
-	prompt2: .asciiz "Enter the exponent n:\n"
-	response: .asciiz "Power(x,n) is:\n"
+# pow.asm program
+#
 
+# C++ (NON-RECURSIVE) code snippet of pow(x,n):
+#   int x, n, pow=1; 
+#   cout << "Enter a number x:\n"; 
+#   cin >> x;
+#   cout << "Enter the exponent n:\n"; 
+#   cin >> n; 
+#   for (int i = 1; i <= n; i++) { 
+#   	pow = pow * x; 
+#   } 
+#   cout << "Power(x,n) is:\n" << pow << "\n";
+#
+# Assembly (NON-RECURSIVE) code version of pow(x,n):
+#
+.data
+
+    enter_num: .asciiz "Enter a number x:\n"
+    exp_num: .asciiz "Enter the exponent n:\n"
+    pow: .asciiz "Power(x,n) is:\n"
+	new_line: .asciiz "\n"
+	# TODO: Write your initializations here
+
+#Text Area (i.e. instructions)
 .text
 main:
-	la $a0 prompt1
-	li $v0 4
-	syscall
-
-	li $v0 5
-	syscall
-	move $t0 $v0
-
-	la $a0 prompt2
-	li $v0 4
-	syscall
-
-	li $v0 5
-	syscall
-	move $t1 $v0
-
-	li $s0 0
-	li $s1 1
-
 	loop:
-		slt $t2 $s0 $t1
-		beq $t2 0 print
-		mult $s1 $t0
-		mflo $s1
-		addi $s0 1
-		j loop
-	
-	print:
-		la $a0 response
-		li $v0 4
-		syscall
-
-		move $a0 $s1
-		li $v0 1
-		syscall
-
-
-
-
+	# TODO: Write your code here
 exit:
+	# TODO: Write code to properly exit a SPIM simulation
 	li $v0 10
-	syscall
+    syscall
